@@ -143,11 +143,11 @@ def ajout_des_valeurs(conn: sql.Connection, cursor: sql.Cursor) -> None:
                 annee = int(row[3])
                 genre = row[4]
                 editeur = row[5]
-                ventes_AN = float(row[6])
-                ventes_UE = float(row[7])
-                ventes_JP = float(row[8])
-                ventes_autres = float(row[9])
-                ventes_global = float(row[10])
+                ventes_AN = round(float(row[6]), 2)
+                ventes_UE = round(float(row[7]), 2)
+                ventes_JP = round(float(row[8]), 2)
+                ventes_autres = round(float(row[9]), 2)
+                ventes_global = round(float(row[10]), 2)
 
                 # Obtenir ou insérer les IDs des tables liées
                 plateforme_id = get_ou_ajout_id(cursor, 'plateformes', 'nom', plateforme)
